@@ -3,4 +3,4 @@
 
 Example of running a diff:
 
-<img src="/app/screenshots/diff1.png" width=30% height=30%>
+<img src="/app/screenshots/diff1.png" width=70% height=70%>
