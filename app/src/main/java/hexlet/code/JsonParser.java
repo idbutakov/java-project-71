@@ -18,6 +18,6 @@ public class JsonParser {
 
         byte[] jsonData = Files.readAllBytes(path);
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(jsonData, new TypeReference<>() {});
+        return objectMapper.readValue(jsonData, new TypeReference<>() { });
     }
 }
