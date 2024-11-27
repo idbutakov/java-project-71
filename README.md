@@ -3,6 +3,8 @@
 
 [![Java CI](https://github.com/idbutakov/java-project-71/actions/workflows/main.yaml/badge.svg)](https://github.com/idbutakov/java-project-71/actions/workflows/main.yaml)
 
+<a href="https://codeclimate.com/github/idbutakov/java-project-71/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8679194533e3927c2b90/test_coverage" /></a>
+
 Example of running a diff:
 
 <img src="/app/screenshots/diff1.png" width=70% height=70%>
