@@ -1,34 +1,18 @@
 .DEFAULT_GOAL := build-run
 
-setup:
-	./gradlew wrapper --gradle-version 8.9
+install: make -C app install
 
-clean:
-	./gradlew clean
+run-dist: make -C app run-dist
 
-build:
-	./gradlew clean build
+build: make -C app build
 
-install:
-	./gradlew clean install
+run: make -C app run
 
-run-dist:
-	./build/install/app/bin/app
+test: make -C app test
 
-run:
-	./gradlew run
+report: make -C app report
 
-test:
-	./gradlew test
-
-report:
-	./gradlew jacocoTestReport
-
-lint:
-	./gradlew checkstyleMain checkstyleTest
-
-update-deps:
-	./gradlew useLatestVersions
+lint: make -C app lint
 
 build-run: build run
 
