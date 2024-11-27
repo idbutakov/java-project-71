@@ -1,18 +1,25 @@
 .DEFAULT_GOAL := build-run
 
-install: make -C app install
+install:
+	$(MAKE) -C app install
 
-run-dist: make -C app run-dist
+run-dist:
+	$(MAKE) -C app run-dist
 
-build: make -C app build
+build:
+	$(MAKE) -C app build
 
-run: make -C app run
+run:
+	$(MAKE) -C app run
 
-test: make -C app test
+test:
+	$(MAKE) -C app test
 
-report: make -C app report
+report:
+	$(MAKE) -C app report
 
-lint: make -C app lint
+lint:
+	$(MAKE) -C app lint
 
 build-run: build run
 
