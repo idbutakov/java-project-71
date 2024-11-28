@@ -18,14 +18,17 @@ public class Differ {
             Object value1 = map1.get(key);
             Object value2 = map2.get(key);
 
+            String value1Str = String.valueOf(value1);
+            String value2Str = String.valueOf(value2);
+
             if (inFile1 && inFile2 && Objects.equals(value1, value2)) {
-                result.append("    ").append(key).append(": ").append(value1).append("\n");
+                result.append("    ").append(key).append(": ").append(value1Str).append("\n");
             } else {
                 if (inFile1) {
-                    result.append("  - ").append(key).append(": ").append(value1).append("\n");
+                    result.append("  - ").append(key).append(": ").append(value1Str).append("\n");
                 }
                 if (inFile2) {
-                    result.append("  + ").append(key).append(": ").append(value2).append("\n");
+                    result.append("  + ").append(key).append(": ").append(value2Str).append("\n");
                 }
             }
         }

@@ -14,7 +14,7 @@ class AppTests {
     private App app;
     private static final String FILE1_PATH = "src/test/resources/json1.json";
     private static final String FILE2_PATH = "src/test/resources/json2.json";
-    private static final String FILE3_PATH = "src/test/resources/json3.json";
+    private static final String FILE3_PATH = "src/test/resources/emptyJson.json";
 
     @BeforeEach
     void setUp() {
