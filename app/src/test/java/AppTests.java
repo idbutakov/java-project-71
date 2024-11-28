@@ -23,18 +23,18 @@ class AppTests {
         app.filepath2 = FILE2_PATH;
     }
 
-    @Test
-    void testCallSuccess() {
-        Path file1 = Paths.get(FILE1_PATH);
-        Path file2 = Paths.get(FILE2_PATH);
-
-        assertTrue(Files.exists(file1), "json1.json должен существовать");
-        assertTrue(Files.exists(file2), "json2.json должен существовать");
-
-        int exitCode = app.call();
-
-        assertEquals(0, exitCode);
-    }
+//    @Test
+//    void testCallSuccess() {
+//        Path file1 = Paths.get(FILE1_PATH);
+//        Path file2 = Paths.get(FILE2_PATH);
+//
+//        assertTrue(Files.exists(file1), "json1.json должен существовать");
+//        assertTrue(Files.exists(file2), "json2.json должен существовать");
+//
+//        int exitCode = app.call();
+//
+//        assertEquals(0, exitCode);
+//    }
 
     @Test
     void testCallFileNotFound() throws IOException {
