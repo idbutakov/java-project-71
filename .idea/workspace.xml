@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push29">
-      <change afterPath="$PROJECT_DIR$/app/src/main/files/json4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/emptyJson.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/hexlet/code/Differ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/Differ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/AppTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/AppTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/resources/json3.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/files/json3.json" afterDir="false" />
-    </list>
+    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push32" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -493,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732795202157</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="push32">
+      <option name="closed" value="true" />
+      <created>1732805533824</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1732805533824</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -521,6 +522,7 @@
     <MESSAGE value="push27" />
     <MESSAGE value="push28" />
     <MESSAGE value="push29" />
-    <option name="LAST_COMMIT_MESSAGE" value="push29" />
+    <MESSAGE value="push32" />
+    <option name="LAST_COMMIT_MESSAGE" value="push32" />
   </component>
 </project>
