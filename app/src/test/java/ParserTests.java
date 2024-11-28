@@ -1,4 +1,4 @@
-import hexlet.code.JsonParser;
+import hexlet.code.Parser;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -7,11 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.io.IOException;
 import java.util.Map;
 
-class JsonParserTests {
+class ParserTests {
+
     @Test
     void testParseJsonFileValidFile() throws IOException {
         String filePath = "src/test/resources/file1.json";
-        Map<String, Object> result = JsonParser.parseJsonFile(filePath);
+        Map<String, Object> result = Parser.parseFile(filePath);
 
         assertNotNull(result);
         assertTrue(result.containsKey("host"));
@@ -28,7 +29,7 @@ class JsonParserTests {
     void testParseJsonFileFileDoesNotExist() {
         String invalidPath = "src/test/resources/file100.json";
 
-        IOException thrown = assertThrows(IOException.class, () -> JsonParser.parseJsonFile(invalidPath));
+        IOException thrown = assertThrows(IOException.class, () -> Parser.parseFile(invalidPath));
         assertEquals("Файл src/test/resources/file100.json не существует.", thrown.getMessage());
     }
 
@@ -36,6 +37,6 @@ class JsonParserTests {
     void testParseJsonFileInvalidJson() {
         String filePath = "src/test/resources/invalidJson.json";
 
-        assertThrows(IOException.class, () -> JsonParser.parseJsonFile(filePath));
+        assertThrows(IOException.class, () -> Parser.parseFile(filePath));
     }
 }

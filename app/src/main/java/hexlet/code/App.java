@@ -33,8 +33,8 @@ public class App implements Callable<Integer> {
     @Override
     public Integer call() {
         try {
-            Map<String, Object> file1Data = JsonParser.parseJsonFile(filepath1);
-            Map<String, Object> file2Data = JsonParser.parseJsonFile(filepath2);
+            Map<String, Object> file1Data = Parser.parseFile(filepath1);
+            Map<String, Object> file2Data = Parser.parseFile(filepath2);
 
             String diff = Differ.generate(file1Data, file2Data);
             System.out.println(diff);
