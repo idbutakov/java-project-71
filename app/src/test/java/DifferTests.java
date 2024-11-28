@@ -1,6 +1,6 @@
 import hexlet.code.Differ;
 import hexlet.code.Difference;
-import hexlet.code.StylishFormatter;
+import formatters.StylishFormatter;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;

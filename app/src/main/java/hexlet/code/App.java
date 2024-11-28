@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import formatters.StylishFormatter;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;

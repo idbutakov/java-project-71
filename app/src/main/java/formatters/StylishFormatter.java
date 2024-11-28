@@ -1,4 +1,6 @@
-package hexlet.code;
+package formatters;
+
+import hexlet.code.Difference;
 
 import java.util.Set;
 
