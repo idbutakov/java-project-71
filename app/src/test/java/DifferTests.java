@@ -1,8 +1,9 @@
 import hexlet.code.Differ;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DifferTests {
 
@@ -19,11 +20,11 @@ public class DifferTests {
                 "key3", true
         );
 
-        String expected = "{\n" +
-                "    key1: value1\n" +
-                "    key2: 2\n" +
-                "    key3: true\n" +
-                "}";
+        String expected = "{\n"
+                + "    key1: value1\n"
+                + "    key2: 2\n"
+                + "    key3: true\n"
+                + "}";
 
         String result = Differ.generate(map1, map2);
         assertEquals(expected, result);
@@ -40,12 +41,12 @@ public class DifferTests {
                 "key3", "new value"
         );
 
-        String expected = "{\n" +
-                "  - key1: value1\n" +
-                "  - key2: 2\n" +
-                "  + key2: 3\n" +
-                "  + key3: new value\n" +
-                "}";
+        String expected = "{\n"
+                + "  - key1: value1\n"
+                + "  - key2: 2\n"
+                + "  + key2: 3\n"
+                + "  + key3: new value\n"
+                + "}";
 
         String result = Differ.generate(map1, map2);
         assertEquals(expected, result);
@@ -59,10 +60,10 @@ public class DifferTests {
         );
         Map<String, Object> map2 = Map.of();
 
-        String expected = "{\n" +
-                "  - key1: value1\n" +
-                "  - key2: 2\n" +
-                "}";
+        String expected = "{\n"
+                + "  - key1: value1\n"
+                + "  - key2: 2\n"
+                + "}";
 
         String result = Differ.generate(map1, map2);
         assertEquals(expected, result);
@@ -88,10 +89,10 @@ public class DifferTests {
                 "key1", "value2"
         );
 
-        String expected = "{\n" +
-                "  - key1: value1\n" +
-                "  + key1: value2\n" +
-                "}";
+        String expected = "{\n"
+                + "  - key1: value1\n"
+                + "  + key1: value2\n"
+                + "}";
 
         String result = Differ.generate(map1, map2);
         assertEquals(expected, result);

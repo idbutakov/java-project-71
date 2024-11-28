@@ -17,10 +17,10 @@ import java.util.concurrent.Callable;
 public class App implements Callable<Integer> {
 
     @Parameters(index = "0", paramLabel = "filepath1", description = "path to first file")
-    private String filepath1;
+    public String filepath1;
 
     @Parameters(index = "1", paramLabel = "filepath2", description = "path to second file")
-    private String filepath2;
+    public String filepath2;
 
     @Option(
             names = {"-f", "--format"},
@@ -43,9 +43,6 @@ public class App implements Callable<Integer> {
         } catch (IOException e) {
             System.err.println("Ошибка при чтении файлов: " + e.getMessage());
             return 1;
-        } catch (Exception e) {
-            System.err.println("Произошла ошибка: " + e.getMessage());
-            return 2;
         }
     }
 

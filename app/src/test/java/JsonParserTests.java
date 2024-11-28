@@ -34,7 +34,7 @@ class JsonParserTests {
 
     @Test
     void testParseJsonFileInvalidJson() {
-        String filePath = "src/test/resources/invalidFile.json";
+        String filePath = "src/test/resources/invalidJson.json";
 
         assertThrows(IOException.class, () -> JsonParser.parseJsonFile(filePath));
     }
