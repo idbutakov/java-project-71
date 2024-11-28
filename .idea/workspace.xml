@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push29">
-      <change afterPath="$PROJECT_DIR$/app/src/main/files/json4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/emptyJson.json" afterDir="false" />
+    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push30">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/Difference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/StylishFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/hexlet/code/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/hexlet/code/Differ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/Differ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/AppTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/AppTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/resources/json3.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/files/json3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/DifferTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/DifferTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +83,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -117,6 +123,7 @@
     "Gradle.DifferTests.executor": "Run",
     "Gradle.DifferTests.testGenerateBothEmptyMaps.executor": "Run",
     "Gradle.DifferTests.testGenerateDifferentMaps.executor": "Run",
+    "Gradle.DifferTests.testGenerateIdenticalMaps.executor": "Run",
     "Gradle.JsonParserTests.executor": "Run",
     "Gradle.JsonParserTests.testParseJsonFileValidFile.executor": "Run",
     "Gradle.JsonParserTests.testParseJsonFile_FileDoesNotExist.executor": "Run",
@@ -140,7 +147,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/branch1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/i.butakov/IdeaProjects/java-project-71/app/screenshots",
     "project.structure.last.edited": "Project",
@@ -187,7 +194,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ParserTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DifferTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -200,7 +207,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ParserTests&quot;" />
+            <option value="&quot;DifferTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -294,9 +301,9 @@
       <list>
         <item itemvalue="Gradle.app [installDist]" />
         <item itemvalue="Gradle.app [clean]" />
-        <item itemvalue="Gradle.AppTests" />
         <item itemvalue="Gradle.app [build]" />
-        <item itemvalue="Gradle.ParserTests" />
+        <item itemvalue="Gradle.AppTests" />
+        <item itemvalue="Gradle.DifferTests" />
       </list>
     </recent_temporary>
   </component>
@@ -493,7 +500,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732795202157</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="push30">
+      <option name="closed" value="true" />
+      <created>1732803199630</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1732803199630</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -521,6 +536,7 @@
     <MESSAGE value="push27" />
     <MESSAGE value="push28" />
     <MESSAGE value="push29" />
-    <option name="LAST_COMMIT_MESSAGE" value="push29" />
+    <MESSAGE value="push30" />
+    <option name="LAST_COMMIT_MESSAGE" value="push30" />
   </component>
 </project>

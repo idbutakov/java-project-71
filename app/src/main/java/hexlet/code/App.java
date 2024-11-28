@@ -4,9 +4,9 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.Option;
-
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 
 @Command(
@@ -36,8 +36,16 @@ public class App implements Callable<Integer> {
             Map<String, Object> file1Data = Parser.parseFile(filepath1);
             Map<String, Object> file2Data = Parser.parseFile(filepath2);
 
-            String diff = Differ.generate(file1Data, file2Data);
-            System.out.println(diff);
+            Set<Difference> diff = Differ.generate(file1Data, file2Data);
+
+//            String formattedDiff = switch (format) {
+//                case "plain" -> PlainFormatter.format(diff);
+//                case "json" -> JsonFormatter.format(diff);
+//                default -> StylishFormatter.format(diff);
+//            };
+            String formattedDiff = StylishFormatter.format(diff);
+
+            System.out.println(formattedDiff);
 
             return 0;
         } catch (IOException e) {
