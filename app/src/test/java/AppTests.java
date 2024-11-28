@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AppTests {
     private App app;
-    private static final String FILE1_PATH = "src/test/resources/file1.json";
-    private static final String FILE2_PATH = "src/test/resources/file2.json";
-    private static final String FILE3_PATH = "src/test/resources/file3.json";
+    private static final String FILE1_PATH = "src/test/resources/json1.json";
+    private static final String FILE2_PATH = "src/test/resources/json2.json";
+    private static final String FILE3_PATH = "src/test/resources/json3.json";
 
     @BeforeEach
     void setUp() {
@@ -24,12 +24,12 @@ class AppTests {
     }
 
     @Test
-    void testCallSuccess() throws Exception {
+    void testCallSuccess() {
         Path file1 = Paths.get(FILE1_PATH);
         Path file2 = Paths.get(FILE2_PATH);
 
-        assertTrue(Files.exists(file1), "file1.json должен существовать");
-        assertTrue(Files.exists(file2), "file2.json должен существовать");
+        assertTrue(Files.exists(file1), "json1.json должен существовать");
+        assertTrue(Files.exists(file2), "json2.json должен существовать");
 
         int exitCode = app.call();
 
@@ -47,7 +47,7 @@ class AppTests {
         app.filepath2 = FILE3_PATH;
         int exitCode = app.call();
 
-        String expectedErrorMessage = "Ошибка при чтении файлов: Файл src/test/resources/file3.json не существует.";
+        String expectedErrorMessage = "Ошибка при чтении файлов: Файл " + FILE3_PATH + " не существует.";
         assertTrue(errContent.toString().contains(expectedErrorMessage));
         assertEquals(1, exitCode);
         Files.createFile(file3);
