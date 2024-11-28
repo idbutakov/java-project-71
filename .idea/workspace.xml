@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push9" />
+    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push28">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +58,12 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="other" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -95,33 +105,52 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.AppTests.executor": "Run",
+    "Gradle.AppTests.testCallExceptionHandling.executor": "Run",
+    "Gradle.AppTests.testCallFileNotFound.executor": "Run",
+    "Gradle.AppTests.testCallSuccess.executor": "Run",
+    "Gradle.AppTests.testCall_Success.executor": "Run",
+    "Gradle.AppTests.testCall_UnhandledException.executor": "Run",
+    "Gradle.DifferTests.executor": "Run",
+    "Gradle.DifferTests.testGenerateBothEmptyMaps.executor": "Run",
+    "Gradle.DifferTests.testGenerateDifferentMaps.executor": "Run",
     "Gradle.JsonParserTests.executor": "Run",
+    "Gradle.JsonParserTests.testParseJsonFileValidFile.executor": "Run",
     "Gradle.JsonParserTests.testParseJsonFile_FileDoesNotExist.executor": "Run",
     "Gradle.JsonParserTests.testParseJsonFile_InvalidJson.executor": "Run",
     "Gradle.JsonParserTests.testParseJsonFile_ValidFile.executor": "Run",
-    "Gradle.app [:App.main()].executor": "Run",
+    "Gradle.ParserTests.executor": "Run",
+    "Gradle.ParserTests.testParseFileFileDoesNotExist.executor": "Run",
+    "Gradle.ParserTests.testParseFileValidJsonFile.executor": "Run",
+    "Gradle.ParserTests.testParseFileValidYamlFile.executor": "Run",
+    "Gradle.ParserTests.testParseFileWrongFileFormat.executor": "Run",
+    "Gradle.app [:App.main()].executor": "Debug",
     "Gradle.app [build].executor": "Run",
     "Gradle.app [checkstyleMain].executor": "Run",
     "Gradle.app [checkstyleTest].executor": "Run",
     "Gradle.app [clean].executor": "Run",
     "Gradle.app [installDist].executor": "Run",
+    "Gradle.app [jacocoTestCoverageVerification].executor": "Run",
+    "Gradle.app [jacocoTestReport].executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/i.butakov/IdeaProjects/java-project-71/app/src/test/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/test/resources" />
-      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/src/main/files" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/test/resources" />
@@ -129,8 +158,8 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.JsonParserTests">
-    <configuration name="JsonParserTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.app [build]">
+    <configuration name="AppTests.testCallFileNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -143,7 +172,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;JsonParserTests&quot;" />
+            <option value="&quot;AppTests.testCallFileNotFound&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -154,7 +183,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JsonParserTests.testParseJsonFile_FileDoesNotExist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ParserTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -167,7 +196,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;JsonParserTests.testParseJsonFile_FileDoesNotExist&quot;" />
+            <option value="&quot;ParserTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,7 +207,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JsonParserTests.testParseJsonFile_InvalidJson" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ParserTests.testParseFileFileDoesNotExist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -191,7 +220,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;JsonParserTests.testParseJsonFile_InvalidJson&quot;" />
+            <option value="&quot;ParserTests.testParseFileFileDoesNotExist&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -202,7 +231,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JsonParserTests.testParseJsonFile_ValidFile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ParserTests.testParseFileWrongFileFormat" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -215,7 +244,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;JsonParserTests.testParseJsonFile_ValidFile&quot;" />
+            <option value="&quot;ParserTests.testParseFileWrongFileFormat&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -226,7 +255,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="app [checkstyleTest]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="app [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -237,7 +266,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="checkstyleTest" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -263,11 +292,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.JsonParserTests" />
-        <item itemvalue="Gradle.JsonParserTests.testParseJsonFile_InvalidJson" />
-        <item itemvalue="Gradle.JsonParserTests.testParseJsonFile_FileDoesNotExist" />
-        <item itemvalue="Gradle.JsonParserTests.testParseJsonFile_ValidFile" />
-        <item itemvalue="Gradle.app [checkstyleTest]" />
+        <item itemvalue="Gradle.app [build]" />
+        <item itemvalue="Gradle.ParserTests" />
+        <item itemvalue="Gradle.ParserTests.testParseFileWrongFileFormat" />
+        <item itemvalue="Gradle.ParserTests.testParseFileFileDoesNotExist" />
+        <item itemvalue="Gradle.AppTests.testCallFileNotFound" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +341,151 @@
       <option name="project" value="LOCAL" />
       <updated>1732627455877</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="push11">
+      <option name="closed" value="true" />
+      <created>1732627908345</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732627908345</updated>
+    </task>
+    <task id="LOCAL-00006" summary="push12">
+      <option name="closed" value="true" />
+      <created>1732708028066</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732708028066</updated>
+    </task>
+    <task id="LOCAL-00007" summary="push13">
+      <option name="closed" value="true" />
+      <created>1732708458159</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732708458159</updated>
+    </task>
+    <task id="LOCAL-00008" summary="push14">
+      <option name="closed" value="true" />
+      <created>1732708701979</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732708701979</updated>
+    </task>
+    <task id="LOCAL-00009" summary="push15">
+      <option name="closed" value="true" />
+      <created>1732708885128</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732708885128</updated>
+    </task>
+    <task id="LOCAL-00010" summary="push16">
+      <option name="closed" value="true" />
+      <created>1732716917769</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732716917769</updated>
+    </task>
+    <task id="LOCAL-00011" summary="push17">
+      <option name="closed" value="true" />
+      <created>1732717062300</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732717062300</updated>
+    </task>
+    <task id="LOCAL-00012" summary="push18">
+      <option name="closed" value="true" />
+      <created>1732717306385</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732717306385</updated>
+    </task>
+    <task id="LOCAL-00013" summary="push19">
+      <option name="closed" value="true" />
+      <created>1732717808532</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732717808532</updated>
+    </task>
+    <task id="LOCAL-00014" summary="push20">
+      <option name="closed" value="true" />
+      <created>1732717911996</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732717911996</updated>
+    </task>
+    <task id="LOCAL-00015" summary="push21">
+      <option name="closed" value="true" />
+      <created>1732718202717</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732718202717</updated>
+    </task>
+    <task id="LOCAL-00016" summary="push22">
+      <option name="closed" value="true" />
+      <created>1732718692751</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732718692751</updated>
+    </task>
+    <task id="LOCAL-00017" summary="push23">
+      <option name="closed" value="true" />
+      <created>1732718992698</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732718992698</updated>
+    </task>
+    <task id="LOCAL-00018" summary="push24">
+      <option name="closed" value="true" />
+      <created>1732780039994</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732780039994</updated>
+    </task>
+    <task id="LOCAL-00019" summary="push25">
+      <option name="closed" value="true" />
+      <created>1732788432615</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1732788432615</updated>
+    </task>
+    <task id="LOCAL-00020" summary="push26">
+      <option name="closed" value="true" />
+      <created>1732792436640</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1732792436640</updated>
+    </task>
+    <task id="LOCAL-00021" summary="push27">
+      <option name="closed" value="true" />
+      <created>1732794142814</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1732794142814</updated>
+    </task>
+    <task id="LOCAL-00022" summary="push28">
+      <option name="closed" value="true" />
+      <created>1732794943917</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1732794943917</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -320,6 +493,25 @@
     <MESSAGE value="push7" />
     <MESSAGE value="push8" />
     <MESSAGE value="push9" />
-    <option name="LAST_COMMIT_MESSAGE" value="push9" />
+    <MESSAGE value="push10" />
+    <MESSAGE value="push11" />
+    <MESSAGE value="push12" />
+    <MESSAGE value="push13" />
+    <MESSAGE value="push14" />
+    <MESSAGE value="push15" />
+    <MESSAGE value="push16" />
+    <MESSAGE value="push17" />
+    <MESSAGE value="push18" />
+    <MESSAGE value="push19" />
+    <MESSAGE value="push20" />
+    <MESSAGE value="push21" />
+    <MESSAGE value="push22" />
+    <MESSAGE value="push23" />
+    <MESSAGE value="push24" />
+    <MESSAGE value="push25" />
+    <MESSAGE value="push26" />
+    <MESSAGE value="push27" />
+    <MESSAGE value="push28" />
+    <option name="LAST_COMMIT_MESSAGE" value="push28" />
   </component>
 </project>
