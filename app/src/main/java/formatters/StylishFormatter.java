@@ -1,7 +1,6 @@
 package formatters;
 
 import hexlet.code.Difference;
-
 import java.util.Set;
 
 public class StylishFormatter {
