@@ -17,6 +17,10 @@ Example of running a Structural diff:
 
 <img src="/app/screenshots/diff4.png" width=70% height=70%>
 
+Example of running a Plain diff:
+
+<img src="/app/screenshots/diff5.png" width=70% height=70%>
+
 Example of running a wrong file fromat diff:
 
 <img src="/app/screenshots/diff3.png" width=70% height=70%>
