@@ -16,13 +16,9 @@ public class Parser {
             throw new IOException("Файл " + filePath + " не существует.");
         }
 
-        System.out.println("Обработка файла: " + filePath);
-
         if (filePath.endsWith(".json")) {
-            System.out.println("Используется JSON-парсер");
             return parseJsonFile(path);
         } else if (filePath.endsWith(".yml") || filePath.endsWith(".yaml")) {
-            System.out.println("Используется YAML-парсер");
             return parseYamlFile(path);
         } else {
             throw new IOException("Формат файла не поддерживается: " + filePath);
