@@ -55,4 +55,8 @@ public class Differ {
             default -> StylishFormatter.format(diff);
         };
     }
+
+    public static String generate(String filepath1, String filepath2) throws IOException {
+        return generate(filepath1, filepath2, "stylish");
+    }
 }
