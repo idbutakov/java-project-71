@@ -1,12 +1,15 @@
 package hexlet.code;
 
+import formatters.PlainFormatter;
+import formatters.StylishFormatter;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.TreeSet;
 
 public class Differ {
-    public static Set<Difference> generate(Map<String, Object> map1, Map<String, Object> map2) {
+    public static String generate(Map<String, Object> map1, Map<String, Object> map2, String format) {
         Set<String> allKeys = new HashSet<>();
         allKeys.addAll(map1.keySet());
         allKeys.addAll(map2.keySet());
@@ -38,6 +41,13 @@ public class Differ {
             }
         }
 
-        return new TreeSet<>(differences);
+        var diff = new TreeSet<>(differences);
+
+        if (format.equals("plain")) {
+            return PlainFormatter.format(diff);
+        } else if (format.equals("stylish")) {
+            return StylishFormatter.format(diff);
+        }
+        return StylishFormatter.format(diff);
     }
 }

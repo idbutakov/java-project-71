@@ -1,14 +1,9 @@
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hexlet.code.Differ;
-import hexlet.code.Difference;
-import formatters.StylishFormatter;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.Map;
-import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DifferTests {
@@ -45,9 +40,8 @@ public class DifferTests {
                     key5: {nestedKey=value, isNested=true}
                 }""";
 
-        Set<Difference> result = Differ.generate(map1, map2);
-        String formattedResult = StylishFormatter.format(result);
-        assertEquals(expected, formattedResult);
+        String result = Differ.generate(map1, map2, "stylish");
+        assertEquals(expected, result);
     }
 
     @Test
@@ -77,9 +71,8 @@ public class DifferTests {
                   + key3: [2, 3, 4, 5]
                 }""";
 
-        Set<Difference> result = Differ.generate(map1, map2);
-        String formattedResult = StylishFormatter.format(result);
-        assertEquals(expected, formattedResult);
+        String result = Differ.generate(map1, map2, "stylish");
+        assertEquals(expected, result);
     }
 
     @Test
@@ -101,9 +94,8 @@ public class DifferTests {
                   - key3: [1, 2, 3, 4]
                 }""";
 
-        Set<Difference> result = Differ.generate(map1, map2);
-        String formattedResult = StylishFormatter.format(result);
-        assertEquals(expected, formattedResult);
+        String result = Differ.generate(map1, map2, "stylish");
+        assertEquals(expected, result);
     }
 
     @Test
@@ -113,9 +105,8 @@ public class DifferTests {
 
         String expected = "{\n}";
 
-        Set<Difference> result = Differ.generate(map1, map2);
-        String formattedResult = StylishFormatter.format(result);
-        assertEquals(expected, formattedResult);
+        String result = Differ.generate(map1, map2, "stylish");
+        assertEquals(expected, result);
     }
 
     @Test
@@ -136,8 +127,7 @@ public class DifferTests {
                   + key1: [2, 3, 4, 5]
                 }""";
 
-        Set<Difference> result = Differ.generate(map1, map2);
-        String formattedResult = StylishFormatter.format(result);
-        assertEquals(expected, formattedResult);
+        String result = Differ.generate(map1, map2, "stylish");
+        assertEquals(expected, result);
     }
 }

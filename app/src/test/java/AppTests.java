@@ -21,6 +21,7 @@ class AppTests {
         app = new App();
         app.filepath1 = FILE1_PATH;
         app.filepath2 = FILE2_PATH;
+        app.format = "stylish";
     }
 
     @Test
