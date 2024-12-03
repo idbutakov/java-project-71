@@ -4,13 +4,17 @@ import formatters.JsonFormatter;
 import formatters.PlainFormatter;
 import formatters.StylishFormatter;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.TreeSet;
 
 public class Differ {
-    public static String generate(Map<String, Object> map1, Map<String, Object> map2, String format) {
+    public static String generate(String filepath1, String filepath2, String format) throws IOException {
+        Map<String, Object> map1 = Parser.parseFile(filepath1);
+        Map<String, Object> map2 = Parser.parseFile(filepath2);
+
         Set<String> allKeys = new HashSet<>();
         allKeys.addAll(map1.keySet());
         allKeys.addAll(map2.keySet());
