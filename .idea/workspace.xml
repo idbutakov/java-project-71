@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push34">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/formatters/PlainFormatter.java" afterDir="false" />
+    <list default="true" id="8737b301-8b20-4b2d-936f-e8f6d9426308" name="Changes" comment="push36">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/hexlet/code/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/hexlet/code/Differ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/hexlet/code/Differ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/AppTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/AppTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/DifferTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/DifferTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,9 +112,15 @@
     "Gradle.AppTests.testCall_UnhandledException.executor": "Run",
     "Gradle.DifferTests.executor": "Run",
     "Gradle.DifferTests.testGenerateBothEmptyMaps.executor": "Run",
+    "Gradle.DifferTests.testGenerateBothEmptyMapsPlain.executor": "Run",
     "Gradle.DifferTests.testGenerateDifferentMaps.executor": "Run",
+    "Gradle.DifferTests.testGenerateDifferentMapsPlain.executor": "Run",
+    "Gradle.DifferTests.testGenerateDifferentMapsStylish.executor": "Run",
     "Gradle.DifferTests.testGenerateIdenticalMaps.executor": "Run",
+    "Gradle.DifferTests.testGenerateIdenticalMapsPlain.executor": "Run",
     "Gradle.DifferTests.testGenerateOneEmptyMap.executor": "Run",
+    "Gradle.DifferTests.testGenerateOneEmptyMapPlain.executor": "Run",
+    "Gradle.DifferTests.testGenerateOneEmptyMapStylish.executor": "Run",
     "Gradle.DifferTests.testGenerateSameKeyDifferentValues.executor": "Run",
     "Gradle.JsonParserTests.executor": "Run",
     "Gradle.JsonParserTests.testParseJsonFileValidFile.executor": "Run",
@@ -166,30 +168,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.app [build]">
-    <configuration name="AppTests.testCallSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;AppTests.testCallSuccess&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="DifferTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -214,7 +192,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DifferTests.testGenerateIdenticalMaps" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DifferTests.testGenerateBothEmptyMapsPlain" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -227,7 +205,55 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;DifferTests.testGenerateIdenticalMaps&quot;" />
+            <option value="&quot;DifferTests.testGenerateBothEmptyMapsPlain&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DifferTests.testGenerateDifferentMapsPlain" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;DifferTests.testGenerateDifferentMapsPlain&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DifferTests.testGenerateOneEmptyMapPlain" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;DifferTests.testGenerateOneEmptyMapPlain&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -260,28 +286,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="app [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="installDist" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="java-project-71" />
       <method v="2">
@@ -298,10 +302,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.app [build]" />
-        <item itemvalue="Gradle.app [installDist]" />
-        <item itemvalue="Gradle.AppTests.testCallSuccess" />
         <item itemvalue="Gradle.DifferTests" />
-        <item itemvalue="Gradle.DifferTests.testGenerateIdenticalMaps" />
+        <item itemvalue="Gradle.DifferTests.testGenerateBothEmptyMapsPlain" />
+        <item itemvalue="Gradle.DifferTests.testGenerateOneEmptyMapPlain" />
+        <item itemvalue="Gradle.DifferTests.testGenerateDifferentMapsPlain" />
       </list>
     </recent_temporary>
   </component>
@@ -522,12 +526,18 @@
       <option name="project" value="LOCAL" />
       <updated>1732874420790</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="push35">
+      <option name="closed" value="true" />
+      <created>1733215888313</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1733215888313</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="push8" />
-    <MESSAGE value="push9" />
     <MESSAGE value="push10" />
     <MESSAGE value="push11" />
     <MESSAGE value="push12" />
@@ -551,6 +561,8 @@
     <MESSAGE value="push32" />
     <MESSAGE value="push33" />
     <MESSAGE value="push34" />
-    <option name="LAST_COMMIT_MESSAGE" value="push34" />
+    <MESSAGE value="push35" />
+    <MESSAGE value="push36" />
+    <option name="LAST_COMMIT_MESSAGE" value="push36" />
   </component>
 </project>

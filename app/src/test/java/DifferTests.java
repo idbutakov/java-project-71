@@ -1,33 +1,42 @@
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hexlet.code.Differ;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DifferTests {
+    static int[] array1;
+    static int[] array2;
+    static Map<String, Object> nestedObj;
 
-    @Test
-    public void testGenerateIdenticalMaps() throws Exception {
-        int[] array = {1, 2, 3, 4};
+    @BeforeAll
+    public static void init() throws Exception {
+        array1 = new int[]{1, 2, 3, 4};
+        array2 = new int[]{2, 3, 4, 5};
         String json = "{ \"obj1\": { \"nestedKey\": \"value\", \"isNested\": true } }";
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Map<String, Object>> map = objectMapper.readValue(json, new TypeReference<>() { });
-        Map<String, Object> nestedObj = map.get("obj1");
+        nestedObj = map.get("obj1");
+    }
 
+    @Test
+    public void testGenerateIdenticalMapsStylish() {
         Map<String, Object> map1 = Map.of(
                 "key1", "value1",
                 "key2", 2,
                 "key3", true,
-                "key4", Arrays.toString(array),
+                "key4", Arrays.toString(array1),
                 "key5", nestedObj
         );
+
         Map<String, Object> map2 = Map.of(
                 "key1", "value1",
                 "key2", 2,
                 "key3", true,
-                "key4", Arrays.toString(array),
+                "key4", Arrays.toString(array1),
                 "key5", nestedObj
         );
 
@@ -45,19 +54,18 @@ public class DifferTests {
     }
 
     @Test
-    public void testGenerateDifferentMaps() {
-        int[] array1 = {1, 2, 3, 4};
-        int[] array2 = {2, 3, 4, 5};
-
+    public void testGenerateDifferentMapsStylish() {
         Map<String, Object> map1 = Map.of(
                 "key1", "value1",
                 "key2", 2,
-                "key3", Arrays.toString(array1)
+                "key3", true,
+                "key4", Arrays.toString(array1),
+                "key5", nestedObj
         );
 
         Map<String, Object> map2 = Map.of(
                 "key1", 3,
-                "key2", "new value",
+                "key2", "value2",
                 "key3", Arrays.toString(array2)
         );
 
@@ -66,9 +74,11 @@ public class DifferTests {
                   - key1: value1
                   + key1: 3
                   - key2: 2
-                  + key2: new value
-                  - key3: [1, 2, 3, 4]
+                  + key2: value2
+                  - key3: true
                   + key3: [2, 3, 4, 5]
+                  - key4: [1, 2, 3, 4]
+                  - key5: {nestedKey=value, isNested=true}
                 }""";
 
         String result = Differ.generate(map1, map2, "stylish");
@@ -76,13 +86,13 @@ public class DifferTests {
     }
 
     @Test
-    public void testGenerateOneEmptyMap() {
-        int[] array = {1, 2, 3, 4};
-
+    public void testGenerateOneEmptyMapStylish() {
         Map<String, Object> map1 = Map.of(
                 "key1", "value1",
                 "key2", 2,
-                "key3", Arrays.toString(array)
+                "key3", true,
+                "key4", Arrays.toString(array1),
+                "key5", nestedObj
         );
 
         Map<String, Object> map2 = Map.of();
@@ -91,7 +101,9 @@ public class DifferTests {
                 {
                   - key1: value1
                   - key2: 2
-                  - key3: [1, 2, 3, 4]
+                  - key3: true
+                  - key4: [1, 2, 3, 4]
+                  - key5: {nestedKey=value, isNested=true}
                 }""";
 
         String result = Differ.generate(map1, map2, "stylish");
@@ -99,7 +111,7 @@ public class DifferTests {
     }
 
     @Test
-    public void testGenerateBothEmptyMaps() {
+    public void testGenerateBothEmptyMapsStylish() {
         Map<String, Object> map1 = Map.of();
         Map<String, Object> map2 = Map.of();
 
@@ -110,10 +122,7 @@ public class DifferTests {
     }
 
     @Test
-    public void testGenerateSameKeyDifferentValues() {
-        int[] array1 = {1, 2, 3, 4};
-        int[] array2 = {2, 3, 4, 5};
-
+    public void testGenerateSameKeyDifferentValuesStylish() {
         Map<String, Object> map1 = Map.of(
                 "key1", Arrays.toString(array1)
         );
@@ -126,6 +135,91 @@ public class DifferTests {
                   - key1: [1, 2, 3, 4]
                   + key1: [2, 3, 4, 5]
                 }""";
+
+        String result = Differ.generate(map1, map2, "stylish");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateIdenticalMapsPlain() {
+        Map<String, Object> map1 = Map.of(
+                "key1", "value1",
+                "key2", 2,
+                "key3", true,
+                "key4", Arrays.toString(array1),
+                "key5", nestedObj
+        );
+
+        Map<String, Object> map2 = Map.of(
+                "key1", "value1",
+                "key2", 2,
+                "key3", true,
+                "key4", Arrays.toString(array1),
+                "key5", nestedObj
+        );
+
+        String expected = "";
+
+        String result = Differ.generate(map1, map2, "plain");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateDifferentMapsPlain() {
+        Map<String, Object> map1 = Map.of(
+                "key1", "value1",
+                "key2", 2,
+                "key3", true,
+                "key4", Arrays.toString(array1),
+                "key5", nestedObj
+        );
+
+        Map<String, Object> map2 = Map.of(
+                "key1", 3,
+                "key2", "value2",
+                "key3", Arrays.toString(array2)
+        );
+
+        String expected = """
+                Property 'key1' was updated. From 'value1' to 3
+                Property 'key2' was updated. From 2 to 'value2'
+                Property 'key3' was updated. From true to '[2, 3, 4, 5]'
+                Property 'key4' was removed
+                Property 'key5' was removed""";
+
+        String result = Differ.generate(map1, map2, "plain");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateOneEmptyMapPlain() {
+        Map<String, Object> map1 = Map.of(
+                "key1", "value1",
+                "key2", 2,
+                "key3", true,
+                "key4", Arrays.toString(array1),
+                "key5", nestedObj
+        );
+
+        Map<String, Object> map2 = Map.of();
+
+        String expected = """
+                Property 'key1' was removed
+                Property 'key2' was removed
+                Property 'key3' was removed
+                Property 'key4' was removed
+                Property 'key5' was removed""";
+
+        String result = Differ.generate(map1, map2, "plain");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateBothEmptyMapsPlain() {
+        Map<String, Object> map1 = Map.of();
+        Map<String, Object> map2 = Map.of();
+
+        String expected = "{\n}";
 
         String result = Differ.generate(map1, map2, "stylish");
         assertEquals(expected, result);
