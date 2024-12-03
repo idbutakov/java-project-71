@@ -1,6 +1,7 @@
 package formatters;
 
 import hexlet.code.Difference;
+import java.util.Map;
 import java.util.Set;
 
 public class PlainFormatter {
@@ -48,7 +49,7 @@ public class PlainFormatter {
         if (value instanceof String) {
             return "'" + value + "'";
         }
-        if (value instanceof Iterable || value instanceof Object[] || value instanceof java.util.Map) {
+        if (value instanceof Iterable || value instanceof Object[] || value instanceof Map) {
             return "[complex value]";
         }
         if (value instanceof Boolean || value instanceof Number) {

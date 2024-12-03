@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import formatters.JsonFormatter;
 import formatters.PlainFormatter;
 import formatters.StylishFormatter;
 
@@ -43,11 +44,11 @@ public class Differ {
 
         var diff = new TreeSet<>(differences);
 
-        if (format.equals("plain")) {
-            return PlainFormatter.format(diff);
-        } else if (format.equals("stylish")) {
-            return StylishFormatter.format(diff);
-        }
-        return StylishFormatter.format(diff);
+        return switch (format) {
+            case "plain" -> PlainFormatter.format(diff);
+            case "json" -> JsonFormatter.format(diff);
+            case "stylish" -> StylishFormatter.format(diff);
+            default -> StylishFormatter.format(diff);
+        };
     }
 }
