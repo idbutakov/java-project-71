@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class Difference implements Comparable<Difference> {
+public final class Difference implements Comparable<Difference> {
     public enum Status {
         ADDED, REMOVED, MODIFIED, UNCHANGED
     }

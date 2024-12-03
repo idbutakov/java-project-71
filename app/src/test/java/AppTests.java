@@ -19,9 +19,9 @@ class AppTests {
     @BeforeEach
     void setUp() {
         app = new App();
-        app.filepath1 = FILE1_PATH;
-        app.filepath2 = FILE2_PATH;
-        app.format = "stylish";
+        app.setFilepath1(FILE1_PATH);
+        app.setFilepath2(FILE2_PATH);
+        app.setFormat("stylish");
     }
 
     @Test
@@ -39,7 +39,7 @@ class AppTests {
         ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setErr(new PrintStream(errContent));
 
-        app.filepath2 = FILE3_PATH;
+        app.setFilepath2(FILE3_PATH);
         int exitCode = app.call();
 
         String expectedErrorMessage = "Ошибка при чтении файлов: Файл " + FILE3_PATH + " не существует.";

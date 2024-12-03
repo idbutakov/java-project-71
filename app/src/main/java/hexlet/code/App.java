@@ -12,13 +12,13 @@ import java.util.concurrent.Callable;
         mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference."
 )
-public class App implements Callable<Integer> {
 
+public final class App implements Callable<Integer> {
     @Parameters(index = "0", paramLabel = "filepath1", description = "path to first file")
-    public String filepath1;
+    private String filepath1;
 
     @Parameters(index = "1", paramLabel = "filepath2", description = "path to second file")
-    public String filepath2;
+    private String filepath2;
 
     @Option(
             names = {"-f", "--format"},
@@ -26,7 +26,19 @@ public class App implements Callable<Integer> {
             description = "output format [default: stylish]",
             defaultValue = "stylish"
     )
-    public String format;
+    private String format;
+
+    public void setFilepath1(String filepath1) {
+        this.filepath1 = filepath1;
+    }
+
+    public void setFilepath2(String filepath2) {
+        this.filepath2 = filepath2;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
 
     @Override
     public Integer call() {

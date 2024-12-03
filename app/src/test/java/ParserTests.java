@@ -11,6 +11,7 @@ class ParserTests {
 
     @Test
     void testParseFileValidJsonFile() throws IOException {
+        int timeout = 50;
         String filePath = "src/test/resources/json1.json";
         Map<String, Object> result = Parser.parseFile(filePath);
 
@@ -20,13 +21,14 @@ class ParserTests {
         assertTrue(result.containsKey("proxy"));
         assertTrue(result.containsKey("follow"));
         assertEquals("hexlet.io", result.get("host"));
-        assertEquals(50, result.get("timeout"));
+        assertEquals(timeout, result.get("timeout"));
         assertEquals("123.234.53.22", result.get("proxy"));
         assertEquals(false, result.get("follow"));
     }
 
     @Test
     void testParseFileValidYamlFile() throws IOException {
+        int timeout = 50;
         String filePath = "src/test/resources/yaml1.yaml";
         Map<String, Object> result = Parser.parseFile(filePath);
 
@@ -36,13 +38,14 @@ class ParserTests {
         assertTrue(result.containsKey("proxy"));
         assertTrue(result.containsKey("follow"));
         assertEquals("hexlet.io", result.get("host"));
-        assertEquals(50, result.get("timeout"));
+        assertEquals(timeout, result.get("timeout"));
         assertEquals("123.234.53.22", result.get("proxy"));
         assertEquals(false, result.get("follow"));
     }
 
     @Test
     void testParseFileValidYmlFile() throws IOException {
+        int timeout = 20;
         String filePath = "src/test/resources/yml1.yml";
         Map<String, Object> result = Parser.parseFile(filePath);
 
@@ -50,7 +53,7 @@ class ParserTests {
         assertTrue(result.containsKey("timeout"));
         assertTrue(result.containsKey("verbose"));
         assertTrue(result.containsKey("host"));
-        assertEquals(20, result.get("timeout"));
+        assertEquals(timeout, result.get("timeout"));
         assertEquals(true, result.get("verbose"));
         assertEquals("hexlet.io", result.get("host"));
     }
