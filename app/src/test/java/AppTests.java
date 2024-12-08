@@ -14,7 +14,7 @@ class AppTests {
     private App app;
     private static final String FILE1_PATH = "src/test/resources/json1.json";
     private static final String FILE2_PATH = "src/test/resources/json2.json";
-    private static final String FILE6_PATH = "src/test/resources/json4.json";
+    private static final String FILE4_PATH = "src/test/resources/json4.json";
 
     @BeforeEach
     void setUp() {
@@ -33,16 +33,16 @@ class AppTests {
 
     @Test
     void testCallFileNotFound() throws IOException {
-        Path file6 = Paths.get(FILE6_PATH);
+        Path file6 = Paths.get(FILE4_PATH);
         Files.deleteIfExists(file6);
 
         ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setErr(new PrintStream(errContent));
 
-        app.setFilepath2(FILE6_PATH);
+        app.setFilepath2(FILE4_PATH);
         int exitCode = app.call();
 
-        String expectedErrorMessage = "Ошибка при чтении файлов: Файл " + FILE6_PATH + " не существует.";
+        String expectedErrorMessage = "Ошибка при чтении файлов: Файл " + FILE4_PATH + " не существует.";
         assertTrue(errContent.toString().contains(expectedErrorMessage));
         assertEquals(1, exitCode);
         Files.createFile(file6);
