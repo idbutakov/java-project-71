@@ -1,83 +1,32 @@
 import hexlet.code.Differ;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NoFormatterTests {
-    @Test
-    public void testGenerateIdenticalJsonFilesNoFormatter() throws IOException {
-        String filePath1 = "src/test/resources/json1.json";
-        String filePath2 = "src/test/resources/json1.json";
-
-        String expected = """
-                {
-                    key1: value1
-                    key2: 2
-                    key3: true
-                    key4: [1, 2, 3, 4]
-                    key5: {nestedKey=value, isNested=true}
-                }""";
-
+    @ParameterizedTest
+    @CsvSource({
+        "src/test/resources/json1.json, src/test/resources/json1.json",
+        "src/test/resources/yaml1.yaml, src/test/resources/yaml1.yaml"
+    })
+    public void testGenerateIdenticalFilesStylish(String filePath1,
+                                                  String filePath2) throws IOException {
+        String expected = Files.readString(Paths.get("src/test/resources/expectedNoFormatter1.txt"));
         String result = Differ.generate(filePath1, filePath2);
         assertEquals(expected, result);
     }
 
-    @Test
-    public void testGenerateIdenticalYamlFilesNoFormatter() throws IOException {
-        String filePath1 = "src/test/resources/yaml1.yaml";
-        String filePath2 = "src/test/resources/yaml1.yaml";
-
-        String expected = """
-                {
-                    key1: value1
-                    key2: 2
-                    key3: true
-                    key4: [1, 2, 3, 4]
-                    key5: {nestedKey=value, isNested=true}
-                }""";
-
-        String result = Differ.generate(filePath1, filePath2);
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testGenerateDifferentJsonFilesNoFormatter() throws IOException {
-        String filePath1 = "src/test/resources/json1.json";
-        String filePath2 = "src/test/resources/json2.json";
-
-        String expected = """
-                {
-                  - key1: value1
-                  + key1: 3
-                  - key2: 2
-                  + key2: value2
-                  - key3: true
-                  + key3: [2, 3, 4, 5]
-                  - key4: [1, 2, 3, 4]
-                  - key5: {nestedKey=value, isNested=true}
-                }""";
-
-        String result = Differ.generate(filePath1, filePath2);
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testGenerateDifferentYamlFilesNoFormatter() throws IOException {
-        String filePath1 = "src/test/resources/yaml1.yaml";
-        String filePath2 = "src/test/resources/yaml2.yaml";
-
-        String expected = """
-                {
-                  - key1: value1
-                  + key1: 3
-                  - key2: 2
-                  + key2: value2
-                  - key3: true
-                  + key3: [2, 3, 4, 5]
-                  - key4: [1, 2, 3, 4]
-                  - key5: {nestedKey=value, isNested=true}
-                }""";
-
+    @ParameterizedTest
+    @CsvSource({
+        "src/test/resources/json1.json, src/test/resources/json2.json",
+        "src/test/resources/yaml1.yaml, src/test/resources/yaml2.yaml"
+    })
+    public void testGenerateDifferentFilesStylish(String filePath1,
+                                                  String filePath2) throws IOException {
+        String expected = Files.readString(Paths.get("src/test/resources/expectedNoFormatter2.txt"));
         String result = Differ.generate(filePath1, filePath2);
         assertEquals(expected, result);
     }

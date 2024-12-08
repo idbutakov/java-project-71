@@ -1,0 +1,5 @@
+Property 'key1' was updated. From 'value1' to 3
+Property 'key2' was updated. From 2 to 'value2'
+Property 'key3' was updated. From true to [complex value]
+Property 'key4' was removed
+Property 'key5' was removed

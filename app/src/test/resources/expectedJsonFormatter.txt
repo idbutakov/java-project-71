@@ -1,0 +1,30 @@
+[
+{
+  "property" : "key1",
+  "status" : "updated",
+  "oldValue" : "value1",
+  "newValue" : 3
+},
+{
+  "property" : "key2",
+  "status" : "updated",
+  "oldValue" : 2,
+  "newValue" : "value2"
+},
+{
+  "property" : "key3",
+  "status" : "updated",
+  "oldValue" : true,
+  "newValue" : "[complex value]"
+},
+{
+  "property" : "key4",
+  "status" : "removed",
+  "value" : "[complex value]"
+},
+{
+  "property" : "key5",
+  "status" : "removed",
+  "value" : "[complex value]"
+}
+]

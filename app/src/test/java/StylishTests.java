@@ -1,84 +1,36 @@
 import hexlet.code.Differ;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StylishTests {
-    @Test
-    public void testGenerateIdenticalJsonFilesStylish() throws IOException {
-        String filePath1 = "src/test/resources/json1.json";
-        String filePath2 = "src/test/resources/json1.json";
-
-        String expected = """
-                {
-                    key1: value1
-                    key2: 2
-                    key3: true
-                    key4: [1, 2, 3, 4]
-                    key5: {nestedKey=value, isNested=true}
-                }""";
-
-        String result = Differ.generate(filePath1, filePath2, "stylish");
+    @ParameterizedTest
+    @CsvSource({
+        "src/test/resources/json1.json, src/test/resources/json1.json, stylish",
+        "src/test/resources/yaml1.yaml, src/test/resources/yaml1.yaml, stylish"
+    })
+    public void testGenerateIdenticalFilesStylish(String filePath1,
+                                                  String filePath2,
+                                                  String format) throws IOException {
+        String expected = Files.readString(Paths.get("src/test/resources/expectedStylish1.txt"));
+        String result = Differ.generate(filePath1, filePath2, format);
         assertEquals(expected, result);
     }
 
-    @Test
-    public void testGenerateIdenticalYamlFilesStylish() throws IOException {
-        String filePath1 = "src/test/resources/yaml1.yaml";
-        String filePath2 = "src/test/resources/yaml1.yaml";
-
-        String expected = """
-                {
-                    key1: value1
-                    key2: 2
-                    key3: true
-                    key4: [1, 2, 3, 4]
-                    key5: {nestedKey=value, isNested=true}
-                }""";
-
-        String result = Differ.generate(filePath1, filePath2, "stylish");
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testGenerateDifferentJsonFilesStylish() throws IOException {
-        String filePath1 = "src/test/resources/json1.json";
-        String filePath2 = "src/test/resources/json2.json";
-
-        String expected = """
-                {
-                  - key1: value1
-                  + key1: 3
-                  - key2: 2
-                  + key2: value2
-                  - key3: true
-                  + key3: [2, 3, 4, 5]
-                  - key4: [1, 2, 3, 4]
-                  - key5: {nestedKey=value, isNested=true}
-                }""";
-
-        String result = Differ.generate(filePath1, filePath2, "stylish");
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testGenerateDifferentYamlFilesStylish() throws IOException {
-        String filePath1 = "src/test/resources/yaml1.yaml";
-        String filePath2 = "src/test/resources/yaml2.yaml";
-
-        String expected = """
-                {
-                  - key1: value1
-                  + key1: 3
-                  - key2: 2
-                  + key2: value2
-                  - key3: true
-                  + key3: [2, 3, 4, 5]
-                  - key4: [1, 2, 3, 4]
-                  - key5: {nestedKey=value, isNested=true}
-                }""";
-
-        String result = Differ.generate(filePath1, filePath2, "stylish");
+    @ParameterizedTest
+    @CsvSource({
+        "src/test/resources/json1.json, src/test/resources/json2.json, stylish",
+        "src/test/resources/yaml1.yaml, src/test/resources/yaml2.yaml, stylish"
+    })
+    public void testGenerateDifferentFilesStylish(String filePath1,
+                                                  String filePath2,
+                                                  String format) throws IOException {
+        String expected = Files.readString(Paths.get("src/test/resources/expectedStylish2.txt"));
+        String result = Differ.generate(filePath1, filePath2, format);
         assertEquals(expected, result);
     }
 }
