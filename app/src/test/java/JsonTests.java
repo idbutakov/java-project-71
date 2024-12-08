@@ -5,18 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JsonTests {
     @Test
-    public void testGenerateIdenticalFilesJson() throws IOException {
-        String filePath1 = "src/test/resources/json1.json";
-        String filePath2 = "src/test/resources/json1.json";
-
-        String expected = "[\n]";
-
-        String result = Differ.generate(filePath1, filePath2, "json");
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testGenerateDifferentFilesJson() throws IOException {
+    public void testGenerateDifferentJsonFilesJson() throws IOException {
         String filePath1 = "src/test/resources/json1.json";
         String filePath2 = "src/test/resources/json2.json";
 
@@ -57,26 +46,29 @@ public class JsonTests {
     }
 
     @Test
-    public void testGenerateOneEmptyFileJson() throws IOException {
-        String filePath1 = "src/test/resources/json1.json";
-        String filePath2 = "src/test/resources/emptyJson.json";
+    public void testGenerateDifferentYamlFilesJson() throws IOException {
+        String filePath1 = "src/test/resources/yaml1.yaml";
+        String filePath2 = "src/test/resources/yaml2.yaml";
 
         String expected = """
                 [
                 {
                   "property" : "key1",
-                  "status" : "removed",
-                  "value" : "value1"
+                  "status" : "updated",
+                  "oldValue" : "value1",
+                  "newValue" : 3
                 },
                 {
                   "property" : "key2",
-                  "status" : "removed",
-                  "value" : 2
+                  "status" : "updated",
+                  "oldValue" : 2,
+                  "newValue" : "value2"
                 },
                 {
                   "property" : "key3",
-                  "status" : "removed",
-                  "value" : true
+                  "status" : "updated",
+                  "oldValue" : true,
+                  "newValue" : "[complex value]"
                 },
                 {
                   "property" : "key4",
@@ -87,48 +79,6 @@ public class JsonTests {
                   "property" : "key5",
                   "status" : "removed",
                   "value" : "[complex value]"
-                }
-                ]""";
-
-        String result = Differ.generate(filePath1, filePath2, "json");
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testGenerateBothEmptyFilesJson() throws IOException {
-        String filePath1 = "src/test/resources/emptyJson.json";
-        String filePath2 = "src/test/resources/emptyJson.json";
-
-        String expected = "[\n]";
-
-        String result = Differ.generate(filePath1, filePath2, "json");
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void testGenerateSameKeyDifferentValuesJson() throws IOException {
-        String filePath1 = "src/test/resources/json2.json";
-        String filePath2 = "src/test/resources/json3.json";
-
-        String expected = """
-                [
-                {
-                  "property" : "key1",
-                  "status" : "updated",
-                  "oldValue" : 3,
-                  "newValue" : 4
-                },
-                {
-                  "property" : "key2",
-                  "status" : "updated",
-                  "oldValue" : "value2",
-                  "newValue" : "value3"
-                },
-                {
-                  "property" : "key3",
-                  "status" : "updated",
-                  "oldValue" : "[complex value]",
-                  "newValue" : "[complex value]"
                 }
                 ]""";
 

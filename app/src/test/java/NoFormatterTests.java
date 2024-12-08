@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class StylishTests {
+public class NoFormatterTests {
     @Test
     public void testGenerateDifferentJsonFilesStylish() throws IOException {
         String filePath1 = "src/test/resources/json1.json";
@@ -21,7 +21,7 @@ public class StylishTests {
                   - key5: {nestedKey=value, isNested=true}
                 }""";
 
-        String result = Differ.generate(filePath1, filePath2, "stylish");
+        String result = Differ.generate(filePath1, filePath2);
         assertEquals(expected, result);
     }
 
@@ -42,7 +42,7 @@ public class StylishTests {
                   - key5: {nestedKey=value, isNested=true}
                 }""";
 
-        String result = Differ.generate(filePath1, filePath2, "stylish");
+        String result = Differ.generate(filePath1, filePath2);
         assertEquals(expected, result);
     }
 }
