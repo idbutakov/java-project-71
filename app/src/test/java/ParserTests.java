@@ -14,15 +14,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ParserTests {
     private static final int KEY_2 = 2;
+    private static final int arrayValue1 = 1;
+    private static final int arrayValue2 = 2;
+    private static final int arrayValue3 = 3;
+    private static final int arrayValue4 = 4;
     private static Map<String, Object> expectedResult;
 
     @BeforeAll
     static void setUp() {
         ArrayList<Integer> array1 = new ArrayList<>();
-        array1.add(1);
-        array1.add(2);
-        array1.add(3);
-        array1.add(4);
+        array1.add(arrayValue1);
+        array1.add(arrayValue2);
+        array1.add(arrayValue3);
+        array1.add(arrayValue4);
 
         Map<String, Object> nestedMap = new HashMap<>();
         nestedMap.put("nestedKey", "value");
