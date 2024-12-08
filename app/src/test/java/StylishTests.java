@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class StylishTests {
+public final class StylishTests {
     @ParameterizedTest
     @CsvSource({
         "src/test/resources/json1.json, src/test/resources/json1.json, stylish",

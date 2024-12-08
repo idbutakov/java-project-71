@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NoFormatterTests {
+public final class NoFormatterTests {
     @ParameterizedTest
     @CsvSource({
         "src/test/resources/json1.json, src/test/resources/json1.json",
