@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JsonTests {
     @Test
     public void testGenerateIdenticalFilesJson() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
-        String filePath2 = "src/test/resources/json3.json";
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json1.json";
 
         String expected = "[\n]";
 
@@ -17,8 +17,8 @@ public class JsonTests {
 
     @Test
     public void testGenerateDifferentFilesJson() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
-        String filePath2 = "src/test/resources/json4.json";
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json2.json";
 
         String expected = """
                 [
@@ -58,7 +58,7 @@ public class JsonTests {
 
     @Test
     public void testGenerateOneEmptyFileJson() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
+        String filePath1 = "src/test/resources/json1.json";
         String filePath2 = "src/test/resources/emptyJson.json";
 
         String expected = """
@@ -107,8 +107,8 @@ public class JsonTests {
 
     @Test
     public void testGenerateSameKeyDifferentValuesJson() throws IOException {
-        String filePath1 = "src/test/resources/json4.json";
-        String filePath2 = "src/test/resources/json5.json";
+        String filePath1 = "src/test/resources/json2.json";
+        String filePath2 = "src/test/resources/json3.json";
 
         String expected = """
                 [

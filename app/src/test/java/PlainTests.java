@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PlainTests {
     @Test
     public void testGenerateIdenticalFilesPlain() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
-        String filePath2 = "src/test/resources/json3.json";
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json1.json";
 
         String expected = "";
 
@@ -17,8 +17,8 @@ public class PlainTests {
 
     @Test
     public void testGenerateDifferentFilesPlain() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
-        String filePath2 = "src/test/resources/json4.json";
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json2.json";
 
         String expected = """
                 Property 'key1' was updated. From 'value1' to 3
@@ -33,7 +33,7 @@ public class PlainTests {
 
     @Test
     public void testGenerateOneEmptyFilePlain() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
+        String filePath1 = "src/test/resources/json1.json";
         String filePath2 = "src/test/resources/emptyJson.json";
 
         String expected = """
@@ -60,8 +60,8 @@ public class PlainTests {
 
     @Test
     public void testGenerateSameKeyDifferentValuesPlain() throws IOException {
-        String filePath1 = "src/test/resources/json4.json";
-        String filePath2 = "src/test/resources/json5.json";
+        String filePath1 = "src/test/resources/json2.json";
+        String filePath2 = "src/test/resources/json3.json";
 
         String expected = """
                 Property 'key1' was updated. From 3 to 4

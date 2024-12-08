@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StylishTests {
     @Test
     public void testGenerateIdenticalFilesStylish() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
-        String filePath2 = "src/test/resources/json3.json";
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json1.json";
 
         String expected = """
                 {
@@ -24,8 +24,8 @@ public class StylishTests {
 
     @Test
     public void testGenerateDifferentFilesStylish() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
-        String filePath2 = "src/test/resources/json4.json";
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json2.json";
 
         String expected = """
                 {
@@ -45,7 +45,7 @@ public class StylishTests {
 
     @Test
     public void testGenerateOneEmptyFileStylish() throws IOException {
-        String filePath1 = "src/test/resources/json3.json";
+        String filePath1 = "src/test/resources/json1.json";
         String filePath2 = "src/test/resources/emptyJson.json";
 
         String expected = """
@@ -74,8 +74,8 @@ public class StylishTests {
 
     @Test
     public void testGenerateSameKeyDifferentValuesStylish() throws IOException {
-        String filePath1 = "src/test/resources/json4.json";
-        String filePath2 = "src/test/resources/json5.json";
+        String filePath1 = "src/test/resources/json2.json";
+        String filePath2 = "src/test/resources/json3.json";
 
         String expected = """
                 {

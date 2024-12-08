@@ -1,10 +1,5 @@
 {
-  "key1": "value1",
-  "key2": 2,
-  "key3": true,
-  "key4": [1, 2, 3, 4],
-  "key5": {
-    "nestedKey": "value",
-    "isNested": true
-  }
+  "key1": 4,
+  "key2": "value3",
+  "key3": [3, 4, 5, 6]
 }
