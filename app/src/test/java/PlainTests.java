@@ -22,8 +22,8 @@ public class PlainTests {
 
     @ParameterizedTest
     @CsvSource({
-            "src/test/resources/json1.json, src/test/resources/json2.json, plain",
-            "src/test/resources/yaml1.yaml, src/test/resources/yaml2.yaml, plain"
+        "src/test/resources/json1.json, src/test/resources/json2.json, plain",
+        "src/test/resources/yaml1.yaml, src/test/resources/yaml2.yaml, plain"
     })
     public void testGenerateDifferentFilesPlain(String filePath1,
                                                 String filePath2,
