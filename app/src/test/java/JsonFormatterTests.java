@@ -3,9 +3,31 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class JsonTests {
+public class JsonFormatterTests {
     @Test
-    public void testGenerateDifferentJsonFilesJson() throws IOException {
+    public void testGenerateIdenticalJsonFilesJsonFormatter() throws IOException {
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json1.json";
+
+        String expected = "[\n]";
+
+        String result = Differ.generate(filePath1, filePath2, "json");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateIdenticalYamlFilesJsonFormatter() throws IOException {
+        String filePath1 = "src/test/resources/yaml1.yaml";
+        String filePath2 = "src/test/resources/yaml1.yaml";
+
+        String expected = "[\n]";
+
+        String result = Differ.generate(filePath1, filePath2, "json");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateDifferentJsonFilesJsonFormatter() throws IOException {
         String filePath1 = "src/test/resources/json1.json";
         String filePath2 = "src/test/resources/json2.json";
 
@@ -46,7 +68,7 @@ public class JsonTests {
     }
 
     @Test
-    public void testGenerateDifferentYamlFilesJson() throws IOException {
+    public void testGenerateDifferentYamlFilesJsonFormatter() throws IOException {
         String filePath1 = "src/test/resources/yaml1.yaml";
         String filePath2 = "src/test/resources/yaml2.yaml";
 

@@ -5,6 +5,42 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StylishTests {
     @Test
+    public void testGenerateIdenticalJsonFilesStylish() throws IOException {
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json1.json";
+
+        String expected = """
+                {
+                    key1: value1
+                    key2: 2
+                    key3: true
+                    key4: [1, 2, 3, 4]
+                    key5: {nestedKey=value, isNested=true}
+                }""";
+
+        String result = Differ.generate(filePath1, filePath2, "stylish");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateIdenticalYamlFilesStylish() throws IOException {
+        String filePath1 = "src/test/resources/yaml1.yaml";
+        String filePath2 = "src/test/resources/yaml1.yaml";
+
+        String expected = """
+                {
+                    key1: value1
+                    key2: 2
+                    key3: true
+                    key4: [1, 2, 3, 4]
+                    key5: {nestedKey=value, isNested=true}
+                }""";
+
+        String result = Differ.generate(filePath1, filePath2, "stylish");
+        assertEquals(expected, result);
+    }
+
+    @Test
     public void testGenerateDifferentJsonFilesStylish() throws IOException {
         String filePath1 = "src/test/resources/json1.json";
         String filePath2 = "src/test/resources/json2.json";

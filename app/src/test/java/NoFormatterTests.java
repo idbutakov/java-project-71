@@ -5,7 +5,43 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NoFormatterTests {
     @Test
-    public void testGenerateDifferentJsonFilesStylish() throws IOException {
+    public void testGenerateIdenticalJsonFilesNoFormatter() throws IOException {
+        String filePath1 = "src/test/resources/json1.json";
+        String filePath2 = "src/test/resources/json1.json";
+
+        String expected = """
+                {
+                    key1: value1
+                    key2: 2
+                    key3: true
+                    key4: [1, 2, 3, 4]
+                    key5: {nestedKey=value, isNested=true}
+                }""";
+
+        String result = Differ.generate(filePath1, filePath2);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateIdenticalYamlFilesNoFormatter() throws IOException {
+        String filePath1 = "src/test/resources/yaml1.yaml";
+        String filePath2 = "src/test/resources/yaml1.yaml";
+
+        String expected = """
+                {
+                    key1: value1
+                    key2: 2
+                    key3: true
+                    key4: [1, 2, 3, 4]
+                    key5: {nestedKey=value, isNested=true}
+                }""";
+
+        String result = Differ.generate(filePath1, filePath2);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testGenerateDifferentJsonFilesNoFormatter() throws IOException {
         String filePath1 = "src/test/resources/json1.json";
         String filePath2 = "src/test/resources/json2.json";
 
@@ -26,7 +62,7 @@ public class NoFormatterTests {
     }
 
     @Test
-    public void testGenerateDifferentYamlFilesStylish() throws IOException {
+    public void testGenerateDifferentYamlFilesNoFormatter() throws IOException {
         String filePath1 = "src/test/resources/yaml1.yaml";
         String filePath2 = "src/test/resources/yaml2.yaml";
 
