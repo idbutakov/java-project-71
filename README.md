@@ -7,7 +7,7 @@
 
 Example of running a JSON file diff:
 
-<img src="/app/screenshots/diff1.png" width=70% height=70%>
+<img src="/screenshots/diff1.png" width=70% height=70%>
 
 Example of running a YML file diff:
 
