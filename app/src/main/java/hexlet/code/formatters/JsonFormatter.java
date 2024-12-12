@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import hexlet.code.Difference;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -20,33 +19,35 @@ public class JsonFormatter {
             Object value1 = diff.getValue1();
             Object value2 = diff.getValue2();
 
-            Map<String, Object> formattedDiff = new LinkedHashMap<>();
-            formattedDiff.put("property", key);
-
-            switch (status) {
-                case MODIFIED:
-                    formattedDiff.put("status", "updated");
-                    formattedDiff.put("oldValue", formatValue(value1));
-                    formattedDiff.put("newValue", formatValue(value2));
-                    break;
-                case ADDED:
-                    formattedDiff.put("status", "added");
-                    formattedDiff.put("value", formatValue(value2));
-                    break;
-                case REMOVED:
-                    formattedDiff.put("status", "removed");
-                    formattedDiff.put("value", formatValue(value1));
-                    break;
-                default:
-                    continue;
+            if (status == Difference.Status.MODIFIED) {
+                formattedDifferences.add(Map.of(
+                        "property", key,
+                        "status", "updated",
+                        "oldValue", formatValue(value1),
+                        "newValue", formatValue(value2)
+                ));
+            } else if (status == Difference.Status.ADDED) {
+                formattedDifferences.add(Map.of(
+                        "property", key,
+                        "status", "added",
+                        "value", formatValue(value2)
+                ));
+            } else if (status == Difference.Status.REMOVED) {
+                formattedDifferences.add(Map.of(
+                        "property", key,
+                        "status", "removed",
+                        "value", formatValue(value1)
+                ));
             }
-            formattedDifferences.add(formattedDiff);
         }
 
         return serializeToJson(formattedDifferences);
     }
 
     private static Object formatValue(Object value) {
+        if (value == null) {
+            return "null";
+        }
         if (value instanceof Iterable || value instanceof Object[] || value instanceof Map) {
             return "[complex value]";
         }
