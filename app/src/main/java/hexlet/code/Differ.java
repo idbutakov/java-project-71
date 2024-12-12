@@ -48,15 +48,19 @@ public class Differ {
 
         var diff = new TreeSet<>(differences);
 
+        return formatDifferences(diff, format);
+    }
+
+    public static String generate(String filepath1, String filepath2) throws IOException {
+        return generate(filepath1, filepath2, "stylish");
+    }
+
+    private static String formatDifferences(Set<Difference> diff, String format) {
         return switch (format) {
             case "plain" -> PlainFormatter.format(diff);
             case "json" -> JsonFormatter.format(diff);
             case "stylish" -> StylishFormatter.format(diff);
             default -> StylishFormatter.format(diff);
         };
-    }
-
-    public static String generate(String filepath1, String filepath2) throws IOException {
-        return generate(filepath1, filepath2, "stylish");
     }
 }
