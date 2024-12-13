@@ -17,7 +17,7 @@ public class JsonFormatter {
             Object value2 = diff.get("value2");
 
             if ("MODIFIED".equals(status)) {
-                diff.put("status", "updated");
+                diff.put("status", "modified");
                 diff.put("oldValue", formatValue(value1));
                 diff.put("newValue", formatValue(value2));
                 diff.remove("value1");

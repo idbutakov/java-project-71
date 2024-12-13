@@ -1,19 +1,19 @@
 [
 {
   "key" : "key1",
-  "status" : "updated",
+  "status" : "modified",
   "oldValue" : "value1",
   "newValue" : 3
 },
 {
   "key" : "key2",
-  "status" : "updated",
+  "status" : "modified",
   "oldValue" : 2,
   "newValue" : "value2"
 },
 {
   "key" : "key3",
-  "status" : "updated",
+  "status" : "modified",
   "oldValue" : true,
   "newValue" : "[complex value]"
 },
