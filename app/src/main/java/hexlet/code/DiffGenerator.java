@@ -1,17 +1,20 @@
 package hexlet.code;
 
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Objects;
 
 public class DiffGenerator {
-    public static Set<Difference> generateDifferences(Map<String, Object> map1, Map<String, Object> map2) {
-        Set<String> allKeys = new HashSet<>();
+    public static List<Map<String, Object>> generateDifferences(Map<String, Object> map1, Map<String, Object> map2) {
+        Set<String> allKeys = new TreeSet<>();
         allKeys.addAll(map1.keySet());
         allKeys.addAll(map2.keySet());
 
-        Set<Difference> differences = new HashSet<>();
+        List<Map<String, Object>> differences = new ArrayList<>();
 
         for (String key : allKeys) {
             boolean inFile1 = map1.containsKey(key);
@@ -19,25 +22,32 @@ public class DiffGenerator {
             Object value1 = map1.get(key);
             Object value2 = map2.get(key);
 
+            Map<String, Object> diff = new LinkedHashMap<>();
+            diff.put("key", key);
+
             if (inFile1 && inFile2) {
-                if (value1 == null && value2 == null) {
-                    differences.add(new Difference(key, Difference.Status.UNCHANGED, value1, value2));
-                } else if (value1 != null && value2 != null && !value1.equals(value2)) {
-                    differences.add(new Difference(key, Difference.Status.MODIFIED, value1, value2));
-                } else if (value1 == null && value2 != null) {
-                    differences.add(new Difference(key, Difference.Status.MODIFIED, value1, value2));
-                } else if (value1 != null && value2 == null) {
-                    differences.add(new Difference(key, Difference.Status.MODIFIED, value1, value2));
+                if (Objects.equals(value1, value2)) {
+                    diff.put("status", "UNCHANGED");
+                    diff.put("value1", value1);
+                    diff.put("value2", value2);
                 } else {
-                    differences.add(new Difference(key, Difference.Status.UNCHANGED, value1, value2));
+                    diff.put("status", "MODIFIED");
+                    diff.put("value1", value1);
+                    diff.put("value2", value2);
                 }
             } else if (inFile1) {
-                differences.add(new Difference(key, Difference.Status.REMOVED, value1, null));
+                diff.put("status", "REMOVED");
+                diff.put("value1", value1);
+                diff.put("value2", null);
             } else if (inFile2) {
-                differences.add(new Difference(key, Difference.Status.ADDED, null, value2));
+                diff.put("status", "ADDED");
+                diff.put("value1", null);
+                diff.put("value2", value2);
             }
+
+            differences.add(diff);
         }
 
-        return new TreeSet<>(differences);
+        return differences;
     }
 }

@@ -1,29 +1,29 @@
 [
 {
-  "property" : "key1",
-  "status" : "updated",
+  "key" : "key1",
+  "status" : "modified",
   "oldValue" : "value1",
   "newValue" : 3
 },
 {
-  "property" : "key2",
-  "status" : "updated",
+  "key" : "key2",
+  "status" : "modified",
   "oldValue" : 2,
   "newValue" : "value2"
 },
 {
-  "property" : "key3",
-  "status" : "updated",
+  "key" : "key3",
+  "status" : "modified",
   "oldValue" : true,
   "newValue" : "[complex value]"
 },
 {
-  "property" : "key4",
+  "key" : "key4",
   "status" : "removed",
   "value" : "[complex value]"
 },
 {
-  "property" : "key5",
+  "key" : "key5",
   "status" : "removed",
   "value" : "[complex value]"
 }

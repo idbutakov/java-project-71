@@ -1,21 +1,20 @@
 package hexlet.code.formatters;
 
-import hexlet.code.Difference;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class PlainFormatter {
-    public static String format(Set<Difference> differences) {
+    public static String format(List<Map<String, Object>> differences) {
         StringBuilder result = new StringBuilder();
 
-        for (Difference diff : differences) {
-            String key = diff.getKey();
-            Difference.Status status = diff.getStatus();
-            Object value1 = diff.getValue1();
-            Object value2 = diff.getValue2();
+        for (Map<String, Object> diff : differences) {
+            String key = (String) diff.get("key");
+            String status = (String) diff.get("status");
+            Object value1 = diff.get("value1");
+            Object value2 = diff.get("value2");
 
             switch (status) {
-                case MODIFIED:
+                case "MODIFIED":
                     result.append("Property '").append(key)
                             .append("' was updated. From ")
                             .append(formatValue(value1))
@@ -23,13 +22,13 @@ public class PlainFormatter {
                             .append(formatValue(value2))
                             .append("\n");
                     break;
-                case ADDED:
+                case "ADDED":
                     result.append("Property '").append(key)
                             .append("' was added with value: ")
                             .append(formatValue(value2))
                             .append("\n");
                     break;
-                case REMOVED:
+                case "REMOVED":
                     result.append("Property '").append(key)
                             .append("' was removed")
                             .append("\n");
